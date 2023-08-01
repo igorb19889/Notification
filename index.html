@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bell | CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-3M00D/rn8n+2ZVXBO9Hib0GKNpkm8MSUU/e2VNthDyBYxKWG+BftNYYcuEjXlyrSO637tidzMBXfE7sQm0INUg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    body{
+    background-color: #199;
+    margin: 0;
+}
+.navbar{
+    background-color: rgba(9, 0, 0, 0.704);
+    color: white;
+    padding: 1rem;
+    font-family: arial;
+}
+.navbar span{
+    float: left;
+}
+.navbar-notification{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5em;
+}
+.navbar-notification label{
+    background-color: greenyellow;
+    mask: url(icon/bell.svg);
+    -webkit-mask: url(icon/bell.svg);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 0;
+    vertical-align: middle;
+    display: inline-block;
+
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    animation: swing 0.2s 5;
+}
+
+.navbar .messages{
+   width: 10px;
+   height: 10px;
+   display: inline-block;
+   font-size: 7px;
+   border-radius: 100%;
+   background-color: white;
+   color: black;
+   text-align: center;
+   line-height: 10px;
+   position: fixed;
+   top: 15px;
+   left: 265px;
+   animation: wave 1s;
+   
+}
+
+
+
+.navbar-notification input[type="checkbox"]{
+    display: none;
+}
+
+@keyframes swing{
+    0%{transform: rotate(0);}
+    25%{transform: rotate(20deg);}
+    50%{transform: rotate(0);}
+    75%{transform: rotate(-20deg);}
+    100%{transform: rotate(0);}
+}
+@keyframes wave{
+    0%{transform: scale(0);opacity: 1;}
+    25%{transform: scale(0);opacity: 0;}
+    50%{transform: scale(0);opacity: 0;}
+    
+}
+</style>
+</head>
+<body>
+
+    <nav class="navbar">
+
+        <span>Notification component</span>
+
+        <div role="alert" 
+             aria-describedby="notification-label" 
+             class="navbar-notification">
+
+        <label id="notification-label"
+               for="not-toggler">
+               notification
+               
+       </label>
+       <div class="messages">3</div>
+        <div>
+            <input id="not-toggler" type="checkbox">
+        </div>
+        
+    </div>
+    </nav>
+    
+</body>
+</html>
